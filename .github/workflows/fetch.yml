@@ -17,5 +17,5 @@ jobs:
 
       - name: Run Python Script # Step 3 - Run script with secret
         env: 
-          API_KEY: ${{ DEEPSEEK_CANARY_KEY }} # fetch secret 
+          API_KEY: ${{ GEMINI_CANARY_KEY }} # fetch secret 
         run: python gemini.py
