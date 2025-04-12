@@ -1,6 +1,6 @@
 name: Fetch Secret into Python Script
 on: 
-  push: #triggers workflow when you push changes to repo
+  workflow_dispatch: # manual triggers workflow when you push changes to repo
 
 jobs:
   fetch-and-run:
@@ -18,4 +18,4 @@ jobs:
       - name: Run Python Script # Step 3 - Run script with secret
         env: 
           API_KEY: ${{ DEEPSEEK_CANARY_KEY }} # fetch secret 
-        run: python deepseek.py
+        run: python gemini.py
