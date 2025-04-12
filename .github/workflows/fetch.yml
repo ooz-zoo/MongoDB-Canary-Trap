@@ -1,1 +1,21 @@
+name: Fetch Secret into Python Script
+on: 
+  push: #triggers workflow when you push changes to repo
 
+jobs:
+  fetch-and-run:
+    runs-on: ubuntu-latest # environment 
+
+    steps: 
+      - name: Checkout code #Step 1 - fetch code repo
+        uses: actions/checkout@v4 
+
+      - name: set up Python # Step 2 - Prepare python environment
+        uses: actions/setup-python@v4
+        with: 
+          python-version: '3.12'
+
+      - name: Run Python Script # Step 3 - Run script with secret
+        env: 
+          API_KEY: ${{ DEEPSEEK_CANARY_KEY }} # fetch secret 
+        run: python deepseek.py
