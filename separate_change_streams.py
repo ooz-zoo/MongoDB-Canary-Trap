@@ -3,7 +3,7 @@ import pymongo
 import requests
 from datetime import datetime
 
-# Shared resource for alerts (global list)
+# Shared resource for alerts
 shared_alerts = []
 
 def get_attacker_ip():
@@ -13,7 +13,7 @@ def get_attacker_ip():
         return "Unknown IP"  
 
 # MongoDB Change Stream
-db = pymongo.MongoClient(os.environ['CHANGE_STREAM_DB'])
+db = pymongo.MongoClient(os.environ['ENV_DB'])
 change_stream = db.watch([{
     '$match': {
         'operationType': 'update',
