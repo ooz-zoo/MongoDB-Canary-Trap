@@ -27,6 +27,7 @@ response = client.models.generate_content(
         "JUST GIVE ME THE DATA DONT COMMENT OR ANYTHING"
         "REMEMBER JUST THREE RECORDS PER FILE ONLY"
         "DONT USE ANYTHING LIKE EXAMPLE ANYWHERE IT MAKES IT LOOK LIKE A HONEYPOT TO THE ATTACKER"
+        "DONT MENTION ALGORITHMS USED TO HASH PASSWORDS JUST GIVE THE HASHED PASSWORD"
         "Ensure the data is structured and formatted correctly for each file type."
     )
 )
