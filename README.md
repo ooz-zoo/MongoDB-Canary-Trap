@@ -13,7 +13,7 @@
 
 ### 4) Dynamic Alerts: Includes actionable details such as collection name, document ID, timestamp, and attacker IP address.
 
-## Technologies used:
+## Technologies:
 ### MongoDB - Change Streams 
 ### Python - backend scripting
 ### Gemini - decoy generation
