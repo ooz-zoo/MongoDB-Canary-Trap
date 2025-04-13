@@ -6,7 +6,7 @@ from multiprocessing import Process, Pipe
 from datetime import datetime
 
 # mongo setup
-atlas_connection_string = os.getenv("CHANGE_STREAM_DB")
+atlas_connection_string = os.getenv("ENV_DB")
 mongo_client = MongoClient(atlas_connection_string)
 db = mongo_client["backup_archives"]
 
