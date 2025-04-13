@@ -31,7 +31,7 @@ response = client.models.generate_content(
     )
 )
 
-reponse_text = response.text
+response_text = response.text
 #regex to extract JSON from response
 json_blocks = re.findall(r'```json\n(.*?)\n```', response_text, re.DOTALL) 
 
