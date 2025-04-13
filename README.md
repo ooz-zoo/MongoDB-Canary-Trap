@@ -1,3 +1,4 @@
+## About
 ### A very simple basic monitoring tool designed to detect potential ransomware-like activity targeting databases.
 ### The project focuses on identifying suspicious scans and alerting administrators before these scans escalate into full-blown breaches.
 ### The inspiration came from the increasing threat of ransomware attacks, which can compromise critical information in seconds. MongoDB Canary Trap acts as an early warning system, helping to mitigate risks and protect databases.
