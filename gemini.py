@@ -3,9 +3,6 @@ from pymongo import MongoClient
 from google import genai
 import json
 
-# Initialize the Gemini client
-#client = genai.Client(api_key="AIzaSyClVOGGa_QUdqN2x_PqpwqK1zFPx3GRVDQ")  # Replace YOUR_API_KEY with your actual API key
-
 api_key= os.getenv("API_KEY")
 
 client = genai.Client(api_key=api_key)
