@@ -18,4 +18,5 @@ jobs:
       - name: Run Python Script # Step 3 - Run script with secret
         env: 
           API_KEY: ${{ GEMINI_CANARY_KEY }} # fetch secret 
+          ENV_DB: ${{ CHANGE_STREAM_DB }} # fetch connection string
         run: python gemini.py
