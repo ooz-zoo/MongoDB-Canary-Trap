@@ -30,8 +30,19 @@ response = client.models.generate_content(
     )
 )
 
-# Parse gemini response
-generated_data = json.loads(response.text)
+reponse_text = response.text
+#regex to extract JSON from response
+json_blocks = re.findall(r'```json\n(.*?)\n```', response_text, re.DOTALL) 
+
+# Parse each JSON block and combine them into one list
+generated_data = []
+for block in json_blocks:
+    try:
+        data = json.loads(block.strip()) # remove newlines and convert json string to a py list
+        if isinstance(data, list):
+            generated_data.extend(data)
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON block: {e}")
 
 # connection string 
 atlas_environ = os.getenv("ENV_DB")
@@ -62,13 +73,13 @@ try:
 
     if employee_payrolls:
         db.employee_salaries.insert_many(employee_payrolls)
-        print(f"Inserted {len(employee_payrolls)} records into the 'employee_salaries' collection.")
+        print(f"Inserted {len(employee_payrolls)} records into the 'employee_payrolls' collection.")
 
     if database_dump:
         db.database_dump.insert_many(database_dump)
         print(f"Inserted {len(database_dump)} records into the 'database_dump' collection.")
 
-    print("All data successfully categorized and inserted into MongoDB Atlas!")
+    print("Data successfully inserted!")
 
 except Exception as e:
     print(f"An error occurred: {e}")
