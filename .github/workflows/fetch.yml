@@ -1,4 +1,4 @@
-name: Fetch Secret into Python Script
+ename: Fetch Secret into Python Script
 on: 
   push: # triggers workflow when you push changes to repo
 
@@ -17,6 +17,6 @@ jobs:
 
       - name: Run Python Script # Step 3 - Run script with secret
         env: 
-          API_KEY: ${{ GEMINI_CANARY_KEY }} # fetch secret 
-          ENV_DB: ${{ CHANGE_STREAM_DB }} # fetch connection string
+          API_KEY: ${{ secrets.GEMINI_CANARY_KEY }} # fetch secret 
+          ENV_DB: ${{ secrets.CHANGE_STREAM_DB }} # fetch connection string
         run: python gemini.py
