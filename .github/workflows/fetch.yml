@@ -1,6 +1,6 @@
 name: Fetch Secret into Python Script
 on: 
-  workflow_dispatch: # manual triggers workflow when you push changes to repo
+  push: # triggers workflow when you push changes to repo
 
 jobs:
   fetch-and-run:
