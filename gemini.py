@@ -12,7 +12,7 @@ response = client.models.generate_content(
     model="gemini-2.0-flash",
     contents=(
         "Generate realistic-looking decoy data for the following three files in JSON format. "
-        "Each file should have at least 3 records and mimic real-world data with appropriate fields. "
+        "Each file should have at least 20 records and mimic real-world data with appropriate fields. "
         "The data should be believable to an attacker but not use real data. "
         "Include realistic timestamps (e.g., creation_date, last_accessed, and last_modified) where applicable. "
         "Here are the file details:\n\n"
