@@ -1,5 +1,5 @@
 ## About
-### A very simple basic monitoring tool designed to detect potential ransomware-like activity targeting databases. It is based on several assumptions, therefore not highly efficient, but it serves as a starting point for building better solutions.
+### A very simple basic monitoring tool, that acts as an early warning system, designed to detect potential ransomware-like activity targeting databases. It is based on several assumptions, therefore not highly efficient, but it serves as a starting point for building better solutions.
 
 ### The project focuses on identifying suspicious scans and alerting administrators before these scans escalate into full-blown attacks.
 
