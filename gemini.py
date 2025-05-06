@@ -24,10 +24,10 @@ response = client.models.generate_content(
         "Ensure passwords are hashed. "
         "Make sure nothing in the data hints at being a honeypot; it must look real. "
         "Use ISO format for timestamps in the creation_date and last_modified fields. "
-        "THE DATABASE_DUMP.SQL FILE THE QUERIES SHOULD BE VARIED DONT JUST HAVE INSERT COME ON AND HAVE SOMEHTING INTERESTING IN THERE THAT WILL ATTRACT AN ATTACKER"
+        "THE DATABASE_DUMP.SQL FILE THE QUERIES SHOULD BE VARIED, HAVE DIFFERENT OPERATIONS SUCH AS INSERT, SELECT, DROP TABLE, DELETE MAKE IT ATTRACTIVE TO AN ATTACKER"
         "JUST GIVE ME THE DATA DONT COMMENT OR ANYTHING"
         "REMEMBER JUST THREE RECORDS PER FILE ONLY"
-        "DONT USE ANYTHING LIKE EXAMPLE ANYWHERE IT MAKES IT LOOK LIKE A HONEYPOT TO THE ATTACKER"
+        "DONT USE WORDS LIKE EXAMPLE ANYWHERE IT MAKES IT LOOK LIKE A HONEYPOT TO THE ATTACKER"
         "Ensure the data is structured and formatted correctly for each file type."
     )
 )
