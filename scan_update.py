@@ -55,7 +55,6 @@ def attacker_scan():
                     "collection": collection_name,
                     "_id": doc["_id"],
                     "size_kb": round(len(str(doc)) / 1024, 2),
-                    "exfil_speed_mb_s": round(random.uniform(1.0, 10.0), 2)
                 }
                 print(f"Scanned document: {scanned_info}")
 
