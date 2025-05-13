@@ -1,2 +1,6 @@
 pymongo==4.6.3
+protobuf==6.30.2
+Requests==2.32.3
+rich==14.0.0
 dnspython
+
