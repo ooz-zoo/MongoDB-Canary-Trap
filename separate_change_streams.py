@@ -17,7 +17,10 @@ db = pymongo.MongoClient(os.environ['ENV_DB'])
 change_stream = db.watch([{
     '$match': {
         'operationType': 'update',
-        'updateDescription.updatedFields.last_accessed': {'$exists': True}
+        '$or':[
+            { 'updateDescription.updatedFields.last_accessed': {'$exists': True}}
+            {'updateDescription.removedFields': 'last_accessed' } 
+        ]
     }
 }])
 
