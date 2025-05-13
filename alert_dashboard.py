@@ -23,7 +23,7 @@ def get_attacker_ip():
         return "Unknown IP"
 
 def monitor_changes():
-    db = pymongo.MongoClient(os.environ['CHANGE_STREAM_DB'])
+    db = pymongo.MongoClient(os.environ['ENV_DB'])
     change_stream = db.watch([{
         '$match': {
             'operationType': 'update',
