@@ -12,21 +12,25 @@ def get_attacker_ip():
     except:
         return "Unknown IP"  
 
-# MongoDB Change Stream
-db = pymongo.MongoClient(os.environ['ENV_DB'])
-change_stream = db.watch([{
-    '$match': {
-        'operationType': 'update',
-        '$or':[
-            { 'updateDescription.updatedFields.last_accessed': {'$exists': True}}
-            {'updateDescription.removedFields': 'last_accessed' } 
-        ]
-    }
-}])
+# Monitor for changes
+def monitor_changes():
+    db = pymongo.MongoClient(os.environ['ENV_DB'])
+    change_stream = db.watch([{
+        '$match': {
+            'operationType': 'update',
+            '$or':[
+                { 'updateDescription.updatedFields.last_accessed': {'$exists': True}}
+                {'updateDescription.removedFields': 'last_accessed' } 
+            ]
+        }
+    }])
 
-print("[!] Listening for database changes (last_accessed updates)...")
+    print("[!] Listening for database changes (last_accessed updates)...")
 
-for change in change_stream:
+    for change in change_stream:
+        process_alert(change) # hand-over changes be processed
+    
+def process_alert(change):
     collection_name = change["ns"]["coll"]
     doc_id = change["documentKey"]["_id"]
     timestamp = change["updateDescription"]["updatedFields"]["last_accessed"]
@@ -52,3 +56,6 @@ for change in change_stream:
     - Document ID: {doc_id}
     - Last Accessed: {timestamp}
     """)
+
+if __name__ == "__main__":
+    monitor_changes()
