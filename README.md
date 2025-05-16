@@ -1,5 +1,5 @@
-## About
-### A very simple basic monitoring tool, that acts as an early warning system, designed to detect potential ransomware-like activity targeting databases. It is based on several assumptions, therefore not highly efficient, but it serves as a starting point for building better solutions.
+# About
+### A very simple basic monitoring tool, that acts as an early warning system, designed to detect potential ransomware-like activity targeting databases. It is based on several assumptions, therefore not highly efficient, but it serves as a starting point for building a better solution.
 
 ### The project focuses on identifying suspicious scans and alerting administrators before these scans escalate into full-blown attacks.
 
@@ -7,7 +7,7 @@
 
 ### But it still needs a lot of work in heuristics and understanding real world ransomware scanning patterns 
 
-## Features
+# Features
 ### 1) Real-Time Detection - Monitors changes to the last_accessed field in database documents. Tracks and logs suspicious activity instantly.
 
 ### 2) Decoy Generation - Utilizes Gemini to create realistic decoy documents that mislead attackers and flag malicious scans.
@@ -16,7 +16,7 @@
 
 ### 4) Dynamic Alerts: Includes actionable details such as collection name, document ID, timestamp, and attacker IP address.
 
-## Technologies:
+# Technologies:
 ### MongoDB - Change Streams and storage
 ### Python - backend scripting
 ### Gemini - decoy generation
